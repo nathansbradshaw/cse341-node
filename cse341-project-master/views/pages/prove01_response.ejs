@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    <p>Hello <%= data.fname %> <%= data.lname %></p>
+    <p>Your Favorite color is: <%= data.color %></p>
+    <p>Your shoe size is: <%= data.shoe %></p>
+    <p>Take my <%= data.color %> size <%= data.shoe %> shoes</p>
+  </div>
+</div>
+
+</body>
+</html>
