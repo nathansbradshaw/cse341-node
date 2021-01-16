@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <% include ../../includes/header.ejs %>
+</head>
+
+<body>
+   <% include ../../includes/nav.ejs %>
+      <div class="jumbotron text-center">
+         <div class="container">
+            <h1>
+               <%= title %>
+            </h1>
+            <p>The book list</p>
+
+         </div>
+
+      </div>
+      <div class="section">
+         <div class="form">
+            <form action="/prove02/addBook" method="post">
+               <label for="title">Title:</label>
+               <input type="text" id="title" name="title"><br><br>
+               <label for="author">Author:</label>
+               <input type="text" id="author" name="author"><br><br>
+               <label for="summary">Summary</label>
+               <input type="textarea" id="summary" name="summary"><br><br>
+               <input type="submit" value="Submit">
+            </form>
+         </div>
+   
+         <div class="books">
+            <h2 class="text-center title"><b>Book List</b></h2>
+            <hr>
+            <% if (typeof books !=='undefined' && books) { books.forEach(book=> {
+   
+               %>
+               <p><b>Book Title: </b><%= book.title %>
+               </p>
+               <p><b>Book Author: </b><%= book.author %>
+               </p>
+               <p><b>Book Summary </b><%= book.summary %>
+               </p>
+               <hr>
+      
+               <% });} else { %>
+                  <p>no books found</p>
+                  <% } %>
+         </div>
+         
+
+      </div>
+      
+
+</body>
+
+</html>

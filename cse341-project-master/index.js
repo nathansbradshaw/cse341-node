@@ -38,7 +38,8 @@ const ta01Routes = require('./routes/ta01');
 const ta02Routes = require('./routes/ta02');
 const ta03Routes = require('./routes/ta03'); 
 const ta04Routes = require('./routes/ta04');
-const prove01Routes = require('./routes/prove01'); 
+const prove01Routes = require('./routes/prove/prove01'); 
+const prove02Routes = require('./routes/prove/prove02'); 
 
 app.use(express.static(publicDirectory))
    .use(connectLivereload())  //enable live reload
@@ -56,6 +57,7 @@ app.use(express.static(publicDirectory))
    .use('/ta03', ta03Routes) 
    .use('/ta04', ta04Routes)
    .use('/prove01', prove01Routes)
+   .use('/prove02', prove02Routes)
    .get('/', (req, res, next) => {
      // This is the primary index, always handled last. 
      res.render('pages/index', {title: 'Welcome to my CSE341 repo', path: '/'});

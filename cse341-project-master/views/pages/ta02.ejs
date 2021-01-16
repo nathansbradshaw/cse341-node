@@ -10,11 +10,38 @@
   <div class="container">
     <h1><%= title %></h1>
     <p>This is the placeholder for Team Activity 02</p>
+   
   </div>
 </div>
 <div class="container">
-  
+  <div>
+    <form action="/ta02/addUser" method="post">
+      <label for="Uname">Add user</label>
+      <input type="text" id="Uname" name="Uname"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+  </div>
+
+  <div>
+    <form action="/ta02/removeUser" method="post">
+      <label for="Uname">Remove user</label>
+      <input type="text" id="Uname" name="Uname"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+
+      <p><%= error  %> </p>
+  </div>
+
+  <div>
+    <% for (let username of usernames) { %>
+      <p> <%= username %></p>
+    <% };  %> 
+
+  </div>
+
+
 </div>
+
 
 
 </body>
